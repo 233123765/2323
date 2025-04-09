@@ -1,0 +1,140 @@
+/* pages/index/index.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+/* 分数显示 */
+.score-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 20rpx;
+}
+
+.score-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.score-label {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.score-value {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #3cc51f;
+}
+
+/* 游戏画布 */
+.game-canvas {
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  margin: 20rpx 0;
+}
+
+/* 游戏结束 */
+.game-over {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10rpx;
+  padding: 40rpx;
+  z-index: 10;
+}
+
+.game-over-text {
+  font-size: 48rpx;
+  color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.game-over-score {
+  font-size: 36rpx;
+  color: #3cc51f;
+}
+
+/* 控制区域 */
+.controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+/* 方向控制 */
+.direction-controls {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+}
+
+.direction-row {
+  display: flex;
+  justify-content: center;
+}
+
+.direction-btn {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #3cc51f;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.2);
+}
+
+.direction-btn-empty {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 10rpx;
+}
+
+.direction-arrow {
+  color: #fff;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+/* 游戏控制 */
+.game-controls {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.control-btn {
+  background-color: #3cc51f;
+  color: #fff;
+  font-size: 32rpx;
+  padding: 10rpx 40rpx;
+  border-radius: 50rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.2);
+}
+
+/* 提示文字 */
+.tip-text {
+  margin-top: 40rpx;
+  color: #999;
+  font-size: 26rpx;
+} 

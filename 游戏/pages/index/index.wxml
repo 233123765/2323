@@ -1,0 +1,72 @@
+<view class="container">
+  <!-- 分数显示 -->
+  <view class="score-container">
+    <view class="score-item">
+      <text class="score-label">当前分数</text>
+      <text class="score-value">{{score}}</text>
+    </view>
+    <view class="score-item">
+      <text class="score-label">最高分数</text>
+      <text class="score-value">{{bestScore}}</text>
+    </view>
+  </view>
+  
+  <!-- 游戏画布 -->
+  <canvas type="2d" id="gameCanvas" class="game-canvas" 
+          style="width:{{canvasWidth}}px; height:{{canvasHeight}}px;"
+          bindtouchstart="onTouchStart" bindtouchend="onTouchEnd"></canvas>
+  
+  <!-- 游戏结束提示 -->
+  <view class="game-over" wx:if="{{isGameOver}}">
+    <text class="game-over-text">游戏结束</text>
+    <text class="game-over-score">得分: {{score}}</text>
+  </view>
+  
+  <!-- 控制按钮 -->
+  <view class="controls">
+    <!-- 方向控制 -->
+    <view class="direction-controls">
+      <view class="direction-row">
+        <view class="direction-btn-empty"></view>
+        <view class="direction-btn" data-direction="up" bindtap="onDirectionBtnTap">
+          <text class="direction-arrow">↑</text>
+        </view>
+        <view class="direction-btn-empty"></view>
+      </view>
+      <view class="direction-row">
+        <view class="direction-btn" data-direction="left" bindtap="onDirectionBtnTap">
+          <text class="direction-arrow">←</text>
+        </view>
+        <view class="direction-btn-empty"></view>
+        <view class="direction-btn" data-direction="right" bindtap="onDirectionBtnTap">
+          <text class="direction-arrow">→</text>
+        </view>
+      </view>
+      <view class="direction-row">
+        <view class="direction-btn-empty"></view>
+        <view class="direction-btn" data-direction="down" bindtap="onDirectionBtnTap">
+          <text class="direction-arrow">↓</text>
+        </view>
+        <view class="direction-btn-empty"></view>
+      </view>
+    </view>
+    
+    <!-- 游戏控制 -->
+    <view class="game-controls">
+      <button class="control-btn" bindtap="onStartBtnTap">
+        <text wx:if="{{isGameOver}}">重新开始</text>
+        <text wx:elif="{{isPaused}}">继续</text>
+        <text wx:else>开始</text>
+      </button>
+      <button class="control-btn" bindtap="onPauseBtnTap" wx:if="{{!isGameOver}}">
+        <text wx:if="{{isPaused}}">继续</text>
+        <text wx:else>暂停</text>
+      </button>
+    </view>
+  </view>
+  
+  <!-- 提示信息 -->
+  <view class="tip-text">
+    <text>提示: 可以滑动屏幕控制蛇移动方向</text>
+  </view>
+</view> 

@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3cc51f",
+    "navigationBarTitleText": "贪吃蛇游戏",
+    "navigationBarTextStyle": "white"
+  }
+} 

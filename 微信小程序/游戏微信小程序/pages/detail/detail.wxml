@@ -1,0 +1,109 @@
+<!-- pages/detail/detail.wxml -->
+<view class="container" wx:if="{{detail}}">
+  <!-- 游戏信息头部 -->
+  <view class="detail-header">
+    <view class="game-info">
+      <image class="game-cover" src="{{detail.cover}}" mode="aspectFill"></image>
+      <view class="game-meta">
+        <view class="game-name">{{detail.name}}</view>
+        <view class="game-desc">{{detail.description}}</view>
+        <view class="game-rating">
+          <text wx:for="{{detail.rating}}" wx:key="*this" class="star filled">★</text>
+          <text wx:for="{{5 - detail.rating}}" wx:key="*this" class="star">★</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 作者信息 -->
+    <view class="author-info flex-row">
+      <image class="author-avatar" src="{{detail.author.avatar}}" mode="aspectFill"></image>
+      <view class="author-meta">
+        <view class="author-name">{{detail.author.name}}</view>
+        <view class="publish-time">{{detail.publishTime}}</view>
+      </view>
+    </view>
+    
+    <!-- 交互按钮 -->
+    <view class="action-bar flex-row">
+      <view class="stat-item">
+        <image src="/images/icons/view.png" mode="aspectFit"></image>
+        <text>{{detail.views}}</text>
+      </view>
+      <view class="stat-item {{isLiked ? 'active' : ''}}" bindtap="toggleLike">
+        <image src="{{isLiked ? '/images/icons/like_filled.png' : '/images/icons/like.png'}}" mode="aspectFit"></image>
+        <text>{{detail.likes}}</text>
+      </view>
+      <view class="stat-item {{isCollected ? 'active' : ''}}" bindtap="toggleCollect">
+        <image src="{{isCollected ? '/images/icons/collect_filled.png' : '/images/icons/collect.png'}}" mode="aspectFit"></image>
+        <text>{{detail.collections}}</text>
+      </view>
+      <view class="stat-item" bindtap="showComment">
+        <image src="/images/icons/comment.png" mode="aspectFit"></image>
+        <text>{{detail.comments.length}}</text>
+      </view>
+      <button class="share-btn" open-type="share">
+        <image src="/images/icons/share.png" mode="aspectFit"></image>
+      </button>
+    </view>
+  </view>
+  
+  <!-- 攻略内容 -->
+  <view class="detail-content">
+    <rich-text nodes="{{detail.content}}"></rich-text>
+  </view>
+  
+  <!-- 评论区 -->
+  <view class="comment-section">
+    <view class="section-title">评论 ({{detail.comments.length}})</view>
+    <view class="comment-list">
+      <view 
+        wx:for="{{detail.comments}}" 
+        wx:key="id" 
+        class="comment-item">
+        <view class="comment-user flex-row">
+          <image class="user-avatar" src="{{item.user.avatar}}" mode="aspectFill"></image>
+          <view class="user-info">
+            <view class="user-name">{{item.user.name}}</view>
+            <view class="comment-time">{{item.time}}</view>
+          </view>
+        </view>
+        <view class="comment-content">{{item.content}}</view>
+        <view class="comment-actions flex-row">
+          <view class="like-btn">
+            <image src="/images/icons/like.png" mode="aspectFit"></image>
+            <text>{{item.likes}}</text>
+          </view>
+          <view class="reply-btn">回复</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 底部评论输入框 -->
+  <view class="comment-input-bar flex-row" bindtap="showComment">
+    <input type="text" placeholder="说点什么吧..." disabled="{{true}}" />
+    <button class="send-btn">发送</button>
+  </view>
+  
+  <!-- 评论弹出层 -->
+  <view class="comment-popup {{showCommentInput ? 'show' : ''}}" catchtap="hideComment">
+    <view class="comment-area" catchtap="stopPropagation">
+      <view class="popup-title">写评论</view>
+      <textarea 
+        placeholder="说点什么吧..." 
+        maxlength="200" 
+        value="{{commentContent}}"
+        bindinput="inputComment"
+        auto-focus="{{showCommentInput}}"
+        fixed="{{true}}"></textarea>
+      <view class="textarea-counter">{{commentContent.length}}/200</view>
+      <button class="submit-btn" bindtap="submitComment">发布评论</button>
+    </view>
+  </view>
+</view>
+
+<!-- 加载中 -->
+<view class="loading-view" wx:else>
+  <view class="loading-icon"></view>
+  <view class="loading-text">加载中...</view>
+</view> 

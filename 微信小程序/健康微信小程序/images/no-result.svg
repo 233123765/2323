@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(10.000000, 10.000000)">
+            <circle fill="#F5F5F5" cx="90" cy="90" r="90"></circle>
+            <g transform="translate(30.000000, 30.000000)" fill="#CCCCCC">
+                <path d="M60,120 C93.137085,120 120,93.137085 120,60 C120,26.862915 93.137085,0 60,0 C26.862915,0 0,26.862915 0,60 C0,93.137085 26.862915,120 60,120 Z M60,110 C32.386066,110 10,87.613934 10,60 C10,32.386066 32.386066,10 60,10 C87.613934,10 110,32.386066 110,60 C110,87.613934 87.613934,110 60,110 Z" fill-rule="nonzero"></path>
+                <rect x="50" y="40" width="20" height="10" rx="5"></rect>
+                <rect x="50" y="70" width="20" height="10" rx="5"></rect>
+                <path d="M40,60 L80,60 C82.7614237,60 85,62.2385763 85,65 C85,67.7614237 82.7614237,70 80,70 L40,70 C37.2385763,70 35,67.7614237 35,65 C35,62.2385763 37.2385763,60 40,60 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg> 

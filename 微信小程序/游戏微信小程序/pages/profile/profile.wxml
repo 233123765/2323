@@ -1,0 +1,66 @@
+<!-- pages/profile/profile.wxml -->
+<view class="container">
+  <!-- 顶部头像和用户信息 -->
+  <view class="profile-header">
+    <view class="header-title flex-between">
+      <text>个人中心</text>
+      <view class="settings-icon">
+        <image src="/images/icons/settings.png" mode="aspectFit"></image>
+      </view>
+    </view>
+    
+    <view class="user-info flex-row">
+      <image class="avatar" src="{{userInfo.avatar}}" mode="aspectFill"></image>
+      <view class="user-detail">
+        <view class="user-name">{{userInfo.name}}</view>
+        <view class="user-id">ID: {{userInfo.id}}</view>
+      </view>
+      <view class="edit-btn" bindtap="editProfile">编辑资料</view>
+    </view>
+    
+    <!-- 用户数据统计 -->
+    <view class="user-stats flex-row">
+      <view class="stat-item">
+        <view class="stat-num">{{userInfo.collectCount}}</view>
+        <view class="stat-name">收藏攻略</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-num">{{userInfo.postCount}}</view>
+        <view class="stat-name">发布攻略</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-num">{{userInfo.likeCount}}</view>
+        <view class="stat-name">获赞数</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 菜单列表 -->
+  <view class="menu-list">
+    <block wx:for="{{menuList}}" wx:key="id">
+      <view class="menu-section">
+        <view class="section-title">{{item.title}}</view>
+        <view class="section-content">
+          <view 
+            wx:for="{{item.items}}" 
+            wx:for-item="subItem" 
+            wx:key="id"
+            class="menu-item flex-between"
+            bindtap="onMenuItemTap"
+            data-id="{{subItem.id}}">
+            <view class="item-left flex-row">
+              <image class="item-icon" src="{{subItem.icon}}" mode="aspectFit"></image>
+              <text class="item-text">{{subItem.text}}</text>
+            </view>
+            <view class="arrow-icon">
+              <image src="/images/icons/arrow_right.png" mode="aspectFit"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  
+  <!-- 底部导航占位 -->
+  <view class="footer-placeholder"></view>
+</view> 

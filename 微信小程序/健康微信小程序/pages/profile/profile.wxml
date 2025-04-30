@@ -1,0 +1,116 @@
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <!-- 用户信息区域 -->
+  <view class="user-card">
+    <view class="icon-avatar avatar" bindtap="getUserProfile"></view>
+    <view class="user-info">
+      <view class="nickname">{{userInfo.nickName}}</view>
+      <view class="signature">{{userInfo.signature}}</view>
+    </view>
+  </view>
+  
+  <!-- 统计数据 -->
+  <view class="statistics">
+    <view class="stat-item">
+      <view class="stat-num">{{statistics.collect}}</view>
+      <view class="stat-label">收藏</view>
+    </view>
+    <view class="stat-item">
+      <view class="stat-num">{{statistics.follow}}</view>
+      <view class="stat-label">关注</view>
+    </view>
+    <view class="stat-item">
+      <view class="stat-num">{{statistics.fans}}</view>
+      <view class="stat-label">粉丝</view>
+    </view>
+  </view>
+  
+  <!-- 功能区域 -->
+  <view class="features">
+    <view class="feature-row">
+      <view class="feature-item" bindtap="onFeatureTap" data-feature="collect">
+        <view class="feature-icon heart"></view>
+        <view class="feature-name">我的收藏</view>
+      </view>
+      <view class="feature-item" bindtap="onFeatureTap" data-feature="history">
+        <view class="feature-icon history"></view>
+        <view class="feature-name">浏览历史</view>
+      </view>
+      <view class="feature-item" bindtap="onFeatureTap" data-feature="recipe">
+        <view class="feature-icon recipe"></view>
+        <view class="feature-name">我的食谱</view>
+      </view>
+      <view class="feature-item" bindtap="onFeatureTap" data-feature="shopping">
+        <view class="feature-icon shopping"></view>
+        <view class="feature-name">购物清单</view>
+      </view>
+    </view>
+    <view class="feature-row">
+      <view class="feature-item" bindtap="onFeatureTap" data-feature="health">
+        <view class="feature-icon health"></view>
+        <view class="feature-name">健康数据</view>
+      </view>
+      <view class="feature-item" bindtap="onFeatureTap" data-feature="plan">
+        <view class="feature-icon plan"></view>
+        <view class="feature-name">饮食计划</view>
+      </view>
+      <view class="feature-item" bindtap="onFeatureTap" data-feature="analysis">
+        <view class="feature-icon analysis"></view>
+        <view class="feature-name">营养分析</view>
+      </view>
+      <view class="feature-item" bindtap="onFeatureTap" data-feature="community">
+        <view class="feature-icon community"></view>
+        <view class="feature-name">见闻交流</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 我的食谱 -->
+  <view class="my-recipes">
+    <view class="section-title">我的食谱</view>
+    <view class="recipe-list">
+      <view class="recipe-item" wx:for="{{recipes}}" wx:key="id" bindtap="onRecipeTap" data-id="{{item.id}}">
+        <image src="{{item.imageUrl}}" class="recipe-image"></image>
+        <view class="recipe-info">
+          <view class="recipe-title">{{item.title}}</view>
+          <view class="recipe-desc">{{item.desc}}</view>
+          <view class="recipe-rating">
+            <text class="rating-score">★ {{item.rating}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 设置区域 -->
+  <view class="settings">
+    <view class="setting-item" bindtap="onSettingTap" data-setting="account">
+      <view class="setting-left">
+        <view class="setting-icon account"></view>
+        <view class="setting-name">账号设置</view>
+      </view>
+      <view class="setting-arrow"></view>
+    </view>
+    <view class="setting-item" bindtap="onSettingTap" data-setting="privacy">
+      <view class="setting-left">
+        <view class="setting-icon privacy"></view>
+        <view class="setting-name">隐私设置</view>
+      </view>
+      <view class="setting-arrow"></view>
+    </view>
+    <view class="setting-item" bindtap="onSettingTap" data-setting="notification">
+      <view class="setting-left">
+        <view class="setting-icon notification"></view>
+        <view class="setting-name">消息通知</view>
+      </view>
+      <view class="setting-arrow"></view>
+    </view>
+    <view class="setting-item" bindtap="onSettingTap" data-setting="help">
+      <view class="setting-left">
+        <view class="setting-icon help"></view>
+        <view class="setting-name">帮助中心</view>
+      </view>
+      <view class="setting-arrow"></view>
+    </view>
+  </view>
+</view> 

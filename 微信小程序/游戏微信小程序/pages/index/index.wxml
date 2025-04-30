@@ -1,0 +1,61 @@
+<!-- pages/index/index.wxml -->
+<view class="container">
+  <!-- 顶部搜索栏 -->
+  <view class="search-bar flex-between">
+    <view class="search-input flex-row">
+      <image class="search-icon" src="/images/icons/search.png" mode="aspectFit"></image>
+      <input 
+        type="text" 
+        placeholder="搜索游戏攻略" 
+        confirm-type="search"
+        value="{{searchKeyword}}"
+        bindinput="onSearch"
+        bindconfirm="onSearch" />
+      <view class="clear-icon" wx:if="{{searchKeyword}}" bindtap="clearSearch">
+        <image src="/images/icons/clear.png" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 分类标签 -->
+  <scroll-view scroll-x class="category-scroll" enhanced show-scrollbar="{{false}}">
+    <view class="category-list flex-row">
+      <view 
+        wx:for="{{categories}}" 
+        wx:key="id" 
+        class="category-item {{item.active ? 'active' : ''}}"
+        bindtap="switchCategory"
+        data-id="{{item.id}}">
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 游戏列表 -->
+  <view class="game-list">
+    <view 
+      wx:for="{{currentGames}}" 
+      wx:key="id" 
+      class="game-card shadow"
+      bindtap="goToDetail"
+      data-id="{{item.id}}">
+      <image 
+        class="game-cover" 
+        src="{{item.cover}}" 
+        mode="aspectFill"
+        binderror="onImageError"
+        data-id="{{item.id}}"
+        lazy-load="{{true}}"></image>
+      <view class="game-info">
+        <view class="game-name">{{item.name}}</view>
+        <view class="game-desc text-ellipsis-2">{{item.description}}</view>
+        <view class="game-rating flex-row">
+          <view class="stars">
+            <text wx:for="{{item.rating}}" wx:key="*this" class="star filled">★</text>
+            <text wx:for="{{5 - item.rating}}" wx:key="*this" class="star">★</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 

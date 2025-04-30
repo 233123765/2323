@@ -1,0 +1,127 @@
+/* pages/profile/profile.wxss */
+.container {
+  background-color: #f6f6f6;
+  min-height: 100vh;
+}
+
+/* 头部区域 */
+.profile-header {
+  background-color: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.header-title {
+  margin-bottom: 30rpx;
+}
+
+.header-title text {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.settings-icon image {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.user-info {
+  margin-bottom: 40rpx;
+  align-items: center;
+}
+
+.avatar {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+.user-detail {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.user-id {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.edit-btn {
+  padding: 12rpx 30rpx;
+  background-color: #f5f5f5;
+  border-radius: 32rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+/* 数据统计 */
+.user-stats {
+  justify-content: space-around;
+  text-align: center;
+  padding-top: 30rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.stat-num {
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #1296db;
+  margin-bottom: 6rpx;
+}
+
+.stat-name {
+  font-size: 26rpx;
+  color: #666;
+}
+
+/* 菜单列表 */
+.menu-list {
+  background-color: #fff;
+}
+
+.menu-section {
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  padding: 30rpx 30rpx 10rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.menu-item {
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.item-icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 20rpx;
+}
+
+.item-text {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.arrow-icon image {
+  width: 36rpx;
+  height: 36rpx;
+  opacity: 0.5;
+}
+
+/* 底部占位 */
+.footer-placeholder {
+  height: 100rpx;
+} 

@@ -1,0 +1,140 @@
+/**app.wxss**/
+/* 全局样式 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #f6f6f6;
+}
+
+/* 清除浮动 */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* 常用flex布局 */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+/* 文本截断 */
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* 常用颜色 */
+.text-primary {
+  color: #1296db;
+}
+
+.text-secondary {
+  color: #8a8a8a;
+}
+
+.text-danger {
+  color: #e64340;
+}
+
+.text-success {
+  color: #09bb07;
+}
+
+/* 常用边距 */
+.margin-xs {
+  margin: 5rpx;
+}
+
+.margin-sm {
+  margin: 10rpx;
+}
+
+.margin {
+  margin: 20rpx;
+}
+
+.margin-lg {
+  margin: 30rpx;
+}
+
+.margin-xl {
+  margin: 40rpx;
+}
+
+.padding-xs {
+  padding: 5rpx;
+}
+
+.padding-sm {
+  padding: 10rpx;
+}
+
+.padding {
+  padding: 20rpx;
+}
+
+.padding-lg {
+  padding: 30rpx;
+}
+
+.padding-xl {
+  padding: 40rpx;
+}
+
+/* 阴影 */
+.shadow {
+  box-shadow: 0 2rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 卡片样式 */
+.card {
+  background-color: #fff;
+  border-radius: 8rpx;
+  margin: 20rpx;
+  overflow: hidden;
+} 

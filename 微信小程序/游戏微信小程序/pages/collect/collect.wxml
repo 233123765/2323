@@ -1,0 +1,39 @@
+<!-- pages/collect/collect.wxml -->
+<view class="container">
+  <!-- 顶部标题 -->
+  <view class="header">
+    <view class="title">我的收藏</view>
+  </view>
+  
+  <!-- 收藏列表 -->
+  <view class="collect-list">
+    <block wx:if="{{collections.length > 0}}">
+      <view 
+        wx:for="{{collections}}" 
+        wx:key="id"
+        class="collect-item"
+        bindtap="onItemTap"
+        data-id="{{item.id}}"
+        data-type="{{item.type}}">
+        <image class="item-cover" src="{{item.cover}}" mode="aspectFill"></image>
+        <view class="item-info">
+          <view class="item-name">{{item.name}}</view>
+          <view class="item-desc">{{item.description}}</view>
+          <view class="item-meta">
+            <text class="item-type">{{item.type === 'game' ? '游戏' : '攻略'}}</text>
+            <text class="item-time">{{item.collectTime}}</text>
+          </view>
+        </view>
+        <view class="delete-btn" catchtap="onDeleteTap" data-id="{{item.id}}">
+          <image src="/images/icons/delete.png" mode="aspectFit"></image>
+        </view>
+      </view>
+    </block>
+    
+    <!-- 空状态 -->
+    <view wx:else class="empty-state">
+      <image src="/images/empty_collect.png" mode="aspectFit"></image>
+      <view class="empty-text">暂无收藏内容</view>
+    </view>
+  </view>
+</view> 

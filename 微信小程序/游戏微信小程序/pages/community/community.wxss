@@ -1,0 +1,183 @@
+/* pages/community/community.wxss */
+.container {
+  padding-bottom: 100rpx;
+  position: relative;
+}
+
+/* 头部 */
+.header {
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  position: relative;
+  z-index: 99;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.search-icon image, 
+.notification-icon image {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+/* 标签栏 */
+.tabs {
+  display: flex;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f0f0f0;
+  padding: 0 30rpx;
+}
+
+.tab-item {
+  padding: 20rpx 0;
+  margin-right: 40rpx;
+  font-size: 28rpx;
+  color: #666;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #1296db;
+  font-weight: bold;
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6rpx;
+  background-color: #1296db;
+  border-radius: 3rpx;
+}
+
+/* 排序栏 */
+.sort-bar {
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f0f0f0;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.sort-icon {
+  font-size: 20rpx;
+  margin-left: 8rpx;
+}
+
+.sort-filter image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+/* 帖子列表 */
+.post-list {
+  padding: 20rpx;
+}
+
+.post-card {
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 作者信息 */
+.post-author {
+  margin-bottom: 20rpx;
+}
+
+.author-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+
+.author-name {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.post-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 帖子内容 */
+.post-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+}
+
+.post-text {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 16rpx;
+  line-height: 1.6;
+}
+
+.game-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6rpx 12rpx;
+  background-color: #f6f6f6;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+}
+
+.game-icon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 6rpx;
+}
+
+/* 帖子统计 */
+.post-stats {
+  padding-top: 16rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  margin-right: 40rpx;
+}
+
+.stat-item image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 8rpx;
+}
+
+.stat-item text {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 悬浮按钮 */
+.float-btn {
+  position: fixed;
+  right: 30rpx;
+  bottom: 120rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #1296db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.float-btn image {
+  width: 48rpx;
+  height: 48rpx;
+} 

@@ -1,0 +1,48 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 头部区域 -->
+  <view class="header">
+    <view class="title">今日精选</view>
+    <view class="search-icon" bindtap="toggleSearchInput">
+      <view class="icon-search"></view>
+    </view>
+  </view>
+
+  <!-- 搜索框 -->
+  <view class="search-container" wx:if="{{showSearchInput}}">
+    <view class="search-input-box">
+      <view class="icon-search search-icon-small"></view>
+      <input 
+        class="search-input" 
+        placeholder="搜索健康食谱和饮食指南" 
+        value="{{searchValue}}" 
+        bindinput="onSearchInput"
+        bindconfirm="onSearch"
+        confirm-type="search"
+      />
+      <view class="cancel-btn" bindtap="onCancelSearch">取消</view>
+    </view>
+  </view>
+
+  <!-- 文章列表 -->
+  <scroll-view scroll-y="true" class="article-list">
+    <block wx:for="{{articles}}" wx:key="id">
+      <view class="article-card" bindtap="onArticleTap" data-id="{{item.id}}">
+        <image src="{{item.imageUrl}}" mode="aspectFill" class="article-image"></image>
+        <view class="article-info">
+          <view class="article-tag">
+            <text class="tag-text">{{item.tag}}</text>
+          </view>
+          <view class="article-title">{{item.title}}</view>
+          <view class="article-desc">{{item.desc}}</view>
+        </view>
+      </view>
+    </block>
+
+    <!-- 无搜索结果 -->
+    <view class="no-result" wx:if="{{articles.length === 0}}">
+      <image src="/images/no-result.svg" mode="aspectFit" class="no-result-image"></image>
+      <text class="no-result-text">没有找到相关内容</text>
+    </view>
+  </scroll-view>
+</view> 

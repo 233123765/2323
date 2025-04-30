@@ -1,0 +1,79 @@
+/**app.wxss**/
+page {
+  --primary-color: #4CAF50;
+  --secondary-color: #FB8C00;
+  --text-color: #333333;
+  --text-color-light: #666666;
+  --background-color: #F5F5F5;
+  --border-color: #EEEEEE;
+  height: 100%;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100%;
+  background-color: #ffffff;
+}
+
+.card {
+  margin: 10rpx 0;
+  border-radius: 10rpx;
+  background-color: #fff;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 2rpx 10rpx;
+  border-radius: 20rpx;
+  color: var(--primary-color);
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.icon {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.text-secondary {
+  color: var(--text-color-light);
+  font-size: 12px;
+} 

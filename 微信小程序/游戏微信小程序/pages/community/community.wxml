@@ -1,0 +1,266 @@
+<!-- pages/community/community.wxml -->
+<view class="container">
+  <!-- 顶部搜索栏 -->
+  <view class="header flex-between">
+    <view class="title">社区</view>
+    <view class="search-icon">
+      <image src="/images/icons/search.png" mode="aspectFit"></image>
+    </view>
+    <view class="notification-icon">
+      <image src="/images/icons/notification.png" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <!-- 导航标签 -->
+  <view class="tabs">
+    <view 
+      wx:for="{{tabs}}" 
+      wx:key="*this" 
+      class="tab-item {{currentTab === index ? 'active' : ''}}"
+      bindtap="switchTab"
+      data-index="{{index}}">
+      {{item}}
+    </view>
+  </view>
+
+  <!-- 排序方式 -->
+  <view class="sort-bar flex-between">
+    <view class="sort-label">最新发布 <text class="sort-icon">▼</text></view>
+    <view class="sort-filter">
+      <image src="/images/icons/filter.png" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <!-- 帖子列表 -->
+  <view class="post-list">
+    <!-- 热门帖子 -->
+    <block wx:if="{{currentTab === 0}}">
+      <view 
+        wx:for="{{hotPosts}}" 
+        wx:key="id" 
+        class="post-card"
+        bindtap="goToDetail"
+        data-id="{{item.id}}">
+        <!-- 作者信息 -->
+        <view class="post-author flex-row">
+          <image class="author-avatar" src="{{item.author.avatar}}" mode="aspectFill"></image>
+          <view class="author-info">
+            <view class="author-name">{{item.author.name}}</view>
+            <view class="post-time">{{item.time}}</view>
+          </view>
+        </view>
+        
+        <!-- 帖子内容 -->
+        <view class="post-content">
+          <view class="post-title">{{item.title}}</view>
+          <view class="post-text">{{item.content}}</view>
+          <view wx:if="{{item.game}}" class="game-tag">
+            <image class="game-icon" src="/images/icons/gamepad.png" mode="aspectFit"></image>
+            <text>{{item.game.name}}</text>
+          </view>
+        </view>
+        
+        <!-- 帖子互动数据 -->
+        <view class="post-stats flex-row">
+          <view class="stat-item" catchtap="likePost" data-id="{{item.id}}">
+            <image src="/images/icons/like.png" mode="aspectFit"></image>
+            <text>{{item.likes}}</text>
+          </view>
+          <view class="stat-item">
+            <image src="/images/icons/comment.png" mode="aspectFit"></image>
+            <text>{{item.comments}}</text>
+          </view>
+          <view class="stat-item">
+            <image src="/images/icons/collect.png" mode="aspectFit"></image>
+            <text>{{item.collects}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!-- 关注帖子 -->
+    <block wx:if="{{currentTab === 1}}">
+      <view 
+        wx:for="{{followPosts}}" 
+        wx:key="id" 
+        class="post-card"
+        bindtap="goToDetail"
+        data-id="{{item.id}}">
+        <!-- 作者信息 -->
+        <view class="post-author flex-row">
+          <image class="author-avatar" src="{{item.author.avatar}}" mode="aspectFill"></image>
+          <view class="author-info">
+            <view class="author-name">{{item.author.name}}</view>
+            <view class="post-time">{{item.time}}</view>
+          </view>
+        </view>
+        
+        <!-- 帖子内容 -->
+        <view class="post-content">
+          <view class="post-title">{{item.title}}</view>
+          <view class="post-text">{{item.content}}</view>
+          <view wx:if="{{item.game}}" class="game-tag">
+            <image class="game-icon" src="/images/icons/gamepad.png" mode="aspectFit"></image>
+            <text>{{item.game.name}}</text>
+          </view>
+        </view>
+        
+        <!-- 帖子互动数据 -->
+        <view class="post-stats flex-row">
+          <view class="stat-item" catchtap="likePost" data-id="{{item.id}}">
+            <image src="/images/icons/like.png" mode="aspectFit"></image>
+            <text>{{item.likes}}</text>
+          </view>
+          <view class="stat-item">
+            <image src="/images/icons/comment.png" mode="aspectFit"></image>
+            <text>{{item.comments}}</text>
+          </view>
+          <view class="stat-item">
+            <image src="/images/icons/collect.png" mode="aspectFit"></image>
+            <text>{{item.collects}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!-- 攻略帖子 -->
+    <block wx:if="{{currentTab === 2}}">
+      <view 
+        wx:for="{{guidePosts}}" 
+        wx:key="id" 
+        class="post-card"
+        bindtap="goToDetail"
+        data-id="{{item.id}}">
+        <!-- 作者信息 -->
+        <view class="post-author flex-row">
+          <image class="author-avatar" src="{{item.author.avatar}}" mode="aspectFill"></image>
+          <view class="author-info">
+            <view class="author-name">{{item.author.name}}</view>
+            <view class="post-time">{{item.time}}</view>
+          </view>
+        </view>
+        
+        <!-- 帖子内容 -->
+        <view class="post-content">
+          <view class="post-title">{{item.title}}</view>
+          <view class="post-text">{{item.content}}</view>
+          <view wx:if="{{item.game}}" class="game-tag">
+            <image class="game-icon" src="/images/icons/gamepad.png" mode="aspectFit"></image>
+            <text>{{item.game.name}}</text>
+          </view>
+        </view>
+        
+        <!-- 帖子互动数据 -->
+        <view class="post-stats flex-row">
+          <view class="stat-item" catchtap="likePost" data-id="{{item.id}}">
+            <image src="/images/icons/like.png" mode="aspectFit"></image>
+            <text>{{item.likes}}</text>
+          </view>
+          <view class="stat-item">
+            <image src="/images/icons/comment.png" mode="aspectFit"></image>
+            <text>{{item.comments}}</text>
+          </view>
+          <view class="stat-item">
+            <image src="/images/icons/collect.png" mode="aspectFit"></image>
+            <text>{{item.collects}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!-- 讨论帖子 -->
+    <block wx:if="{{currentTab === 3}}">
+      <view 
+        wx:for="{{discussPosts}}" 
+        wx:key="id" 
+        class="post-card"
+        bindtap="goToDetail"
+        data-id="{{item.id}}">
+        <!-- 作者信息 -->
+        <view class="post-author flex-row">
+          <image class="author-avatar" src="{{item.author.avatar}}" mode="aspectFill"></image>
+          <view class="author-info">
+            <view class="author-name">{{item.author.name}}</view>
+            <view class="post-time">{{item.time}}</view>
+          </view>
+        </view>
+        
+        <!-- 帖子内容 -->
+        <view class="post-content">
+          <view class="post-title">{{item.title}}</view>
+          <view class="post-text">{{item.content}}</view>
+          <view wx:if="{{item.game}}" class="game-tag">
+            <image class="game-icon" src="/images/icons/gamepad.png" mode="aspectFit"></image>
+            <text>{{item.game.name}}</text>
+          </view>
+        </view>
+        
+        <!-- 帖子互动数据 -->
+        <view class="post-stats flex-row">
+          <view class="stat-item" catchtap="likePost" data-id="{{item.id}}">
+            <image src="/images/icons/like.png" mode="aspectFit"></image>
+            <text>{{item.likes}}</text>
+          </view>
+          <view class="stat-item">
+            <image src="/images/icons/comment.png" mode="aspectFit"></image>
+            <text>{{item.comments}}</text>
+          </view>
+          <view class="stat-item">
+            <image src="/images/icons/collect.png" mode="aspectFit"></image>
+            <text>{{item.collects}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!-- 问答帖子 -->
+    <block wx:if="{{currentTab === 4}}">
+      <view 
+        wx:for="{{qaPosts}}" 
+        wx:key="id" 
+        class="post-card"
+        bindtap="goToDetail"
+        data-id="{{item.id}}">
+        <!-- 作者信息 -->
+        <view class="post-author flex-row">
+          <image class="author-avatar" src="{{item.author.avatar}}" mode="aspectFill"></image>
+          <view class="author-info">
+            <view class="author-name">{{item.author.name}}</view>
+            <view class="post-time">{{item.time}}</view>
+          </view>
+        </view>
+        
+        <!-- 帖子内容 -->
+        <view class="post-content">
+          <view class="post-title">{{item.title}}</view>
+          <view class="post-text">{{item.content}}</view>
+          <view wx:if="{{item.game}}" class="game-tag">
+            <image class="game-icon" src="/images/icons/gamepad.png" mode="aspectFit"></image>
+            <text>{{item.game.name}}</text>
+          </view>
+        </view>
+        
+        <!-- 帖子互动数据 -->
+        <view class="post-stats flex-row">
+          <view class="stat-item" catchtap="likePost" data-id="{{item.id}}">
+            <image src="/images/icons/like.png" mode="aspectFit"></image>
+            <text>{{item.likes}}</text>
+          </view>
+          <view class="stat-item">
+            <image src="/images/icons/comment.png" mode="aspectFit"></image>
+            <text>{{item.comments}}</text>
+          </view>
+          <view class="stat-item">
+            <image src="/images/icons/collect.png" mode="aspectFit"></image>
+            <text>{{item.collects}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 悬浮按钮 -->
+  <view class="float-btn shadow">
+    <image src="/images/icons/add.png" mode="aspectFit"></image>
+  </view>
+</view> 

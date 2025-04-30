@@ -1,0 +1,273 @@
+/* pages/detail/detail.wxss */
+
+.container {
+  padding: 0;
+  background-color: #ffffff;
+}
+
+/* 头部图片 */
+.header {
+  position: relative;
+  width: 100%;
+  height: 460rpx;
+}
+
+.header-image {
+  width: 100%;
+  height: 100%;
+}
+
+.header-back {
+  position: absolute;
+  top: 60rpx;
+  left: 30rpx;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-icon {
+  width: 20rpx;
+  height: 20rpx;
+  border-top: 4rpx solid #fff;
+  border-left: 4rpx solid #fff;
+  transform: rotate(-45deg);
+  margin-left: 10rpx;
+}
+
+/* 标题区域 */
+.title-section {
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  line-height: 1.4;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6rpx 20rpx;
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--primary-color);
+  font-size: 24rpx;
+  border-radius: 20rpx;
+}
+
+/* 操作按钮 */
+.action-bar {
+  display: flex;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 30rpx;
+  margin-right: 30rpx;
+  border: 1rpx solid #eee;
+  border-radius: 30rpx;
+  background-color: #fff;
+  font-size: 26rpx;
+}
+
+.share-btn {
+  margin: 0;
+  line-height: normal;
+}
+
+.share-btn::after {
+  border: none;
+}
+
+.action-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+
+.collect-icon {
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.collected .collect-icon {
+  background-color: #FF5252;
+}
+
+.share-icon {
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* 文章内容 */
+.article-content {
+  padding: 30rpx;
+}
+
+.article-desc {
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: 30rpx;
+  line-height: 1.6;
+}
+
+.article-paragraph {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* 食谱内容 */
+.recipe-content {
+  padding: 30rpx;
+}
+
+.recipe-info {
+  margin-bottom: 40rpx;
+}
+
+.recipe-desc {
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+  line-height: 1.6;
+}
+
+.recipe-rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating-score {
+  font-size: 28rpx;
+  color: #FF9800;
+  margin-right: 10rpx;
+}
+
+.rating-text {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 公共部分样式 */
+.section {
+  margin-bottom: 40rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  position: relative;
+  padding-left: 20rpx;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8rpx;
+  width: 8rpx;
+  height: 30rpx;
+  background-color: var(--primary-color);
+  border-radius: 4rpx;
+}
+
+/* 配料样式 */
+.ingredients {
+  background-color: #f9f9f9;
+  border-radius: 12rpx;
+  padding: 20rpx;
+}
+
+.ingredient-group {
+  margin-bottom: 20rpx;
+}
+
+.ingredient-group-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.ingredient-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ingredient-item {
+  font-size: 26rpx;
+  color: #666;
+  margin-right: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+/* 步骤样式 */
+.steps {
+  padding: 10rpx;
+}
+
+.step-item {
+  display: flex;
+  margin-bottom: 30rpx;
+}
+
+.step-num {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.step-desc {
+  flex: 1;
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #333;
+  padding-top: 6rpx;
+}
+
+/* 营养成分样式 */
+.nutrition {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f9f9f9;
+  border-radius: 12rpx;
+  padding: 20rpx;
+}
+
+.nutrition-item {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+
+.nutrition-name {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.nutrition-value {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: bold;
+} 

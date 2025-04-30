@@ -1,0 +1,270 @@
+/* pages/profile/profile.wxss */
+@import "../../styles/common.wxss";
+
+.container {
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+/* 用户卡片样式 */
+.user-card {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  background-color: #ffffff;
+  margin-bottom: 2rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  margin-right: 30rpx;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.nickname {
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.signature {
+  font-size: 28rpx;
+  color: var(--text-color-light);
+}
+
+/* 统计数据样式 */
+.statistics {
+  display: flex;
+  background-color: #ffffff;
+  padding: 20rpx 0;
+  margin-bottom: 20rpx;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-num {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #FF7043;
+  margin-bottom: 6rpx;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: var(--text-color-light);
+}
+
+/* 功能区域样式 */
+.features {
+  background-color: #ffffff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.feature-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+}
+
+.feature-row:last-child {
+  margin-bottom: 0;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140rpx;
+}
+
+.feature-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.heart {
+  background-color: rgba(255, 82, 82, 0.1);
+  color: #FF5252;
+}
+
+.history {
+  background-color: rgba(156, 39, 176, 0.1);
+  color: #9C27B0;
+}
+
+.recipe {
+  background-color: rgba(233, 30, 99, 0.1);
+  color: #E91E63;
+}
+
+.shopping {
+  background-color: rgba(255, 152, 0, 0.1);
+  color: #FF9800;
+}
+
+.health {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+}
+
+.plan {
+  background-color: rgba(3, 169, 244, 0.1);
+  color: #03A9F4;
+}
+
+.analysis {
+  background-color: rgba(33, 150, 243, 0.1);
+  color: #2196F3;
+}
+
+.community {
+  background-color: rgba(0, 188, 212, 0.1);
+  color: #00BCD4;
+}
+
+.feature-name {
+  font-size: 24rpx;
+  color: var(--text-color);
+}
+
+/* 我的食谱样式 */
+.my-recipes {
+  background-color: #ffffff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.recipe-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-item {
+  display: flex;
+  margin-bottom: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid var(--border-color);
+}
+
+.recipe-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.recipe-image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}
+
+.recipe-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recipe-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.recipe-desc {
+  font-size: 26rpx;
+  color: var(--text-color-light);
+  margin-bottom: 10rpx;
+}
+
+.recipe-rating {
+  margin-top: auto;
+}
+
+.rating-score {
+  font-size: 24rpx;
+  color: #FF9800;
+}
+
+/* 设置区域样式 */
+.settings {
+  background-color: #ffffff;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid var(--border-color);
+}
+
+.setting-left {
+  display: flex;
+  align-items: center;
+}
+
+.setting-icon {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account {
+  background-color: rgba(63, 81, 181, 0.1);
+  color: #3F51B5;
+}
+
+.privacy {
+  background-color: rgba(233, 30, 99, 0.1);
+  color: #E91E63;
+}
+
+.notification {
+  background-color: rgba(255, 87, 34, 0.1);
+  color: #FF5722;
+}
+
+.help {
+  background-color: rgba(121, 85, 72, 0.1);
+  color: #795548;
+}
+
+.setting-name {
+  font-size: 28rpx;
+}
+
+.setting-arrow {
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 4rpx solid #bbb;
+  border-right: 4rpx solid #bbb;
+  transform: rotate(45deg);
+} 

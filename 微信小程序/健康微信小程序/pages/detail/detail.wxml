@@ -1,0 +1,100 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+  <!-- 头部图片 -->
+  <view class="header">
+    <image class="header-image" src="{{detail.imageUrl}}" mode="aspectFill"></image>
+    <view class="header-back" bindtap="goBack">
+      <view class="back-icon"></view>
+    </view>
+  </view>
+  
+  <!-- 标题区域 -->
+  <view class="title-section">
+    <view class="title">{{detail.title}}</view>
+    <view class="tag" wx:if="{{detail.tag}}">{{detail.tag}}</view>
+  </view>
+  
+  <!-- 操作按钮 -->
+  <view class="action-bar">
+    <view class="action-btn {{isCollected ? 'collected' : ''}}" bindtap="toggleCollect">
+      <view class="action-icon collect-icon"></view>
+      <text>{{isCollected ? '已收藏' : '收藏'}}</text>
+    </view>
+    <button class="action-btn share-btn" open-type="share">
+      <view class="action-icon share-icon"></view>
+      <text>分享</text>
+    </button>
+  </view>
+  
+  <!-- 文章详情 -->
+  <block wx:if="{{type === 'article'}}">
+    <view class="article-content">
+      <view class="article-desc">{{detail.desc}}</view>
+      <view class="article-paragraph">
+        健康饮食是维持身体健康的重要因素之一。均衡的饮食能够提供人体所需的各种营养素，包括蛋白质、碳水化合物、脂肪、维生素和矿物质等。在现代生活中，越来越多的人开始重视健康饮食，并将其作为生活方式的一部分。
+      </view>
+      <view class="article-paragraph">
+        健康饮食的关键在于多样化和平衡。应当摄入各种食物，包括蔬菜、水果、全谷类、低脂奶制品、瘦肉、豆类和坚果等。蔬菜和水果富含维生素、矿物质和纤维素，能够增强免疫力，预防慢性疾病。全谷类食物含有丰富的膳食纤维和B族维生素，有助于维持肠道健康和提供持久能量。
+      </view>
+      <view class="article-paragraph">
+        除了关注食物的种类，还应当注意烹饪方式。减少油炸和过度加工的食物，选择蒸、煮、炖、烤等健康的烹饪方式，能够最大限度地保留食物的营养价值。同时，控制盐、糖和油的摄入量也是健康饮食的重要方面。
+      </view>
+      <view class="article-paragraph">
+        规律的饮食习惯同样重要。定时定量进餐，避免暴饮暴食或长时间不进食，有助于维持稳定的血糖水平和代谢率。此外，充分咀嚼食物，慢食细嚼，不仅有助于消化吸收，还能够增加饱腹感，避免过量进食。
+      </view>
+    </view>
+  </block>
+  
+  <!-- 食谱详情 -->
+  <block wx:elif="{{type === 'recipe'}}">
+    <view class="recipe-content">
+      <!-- 基本信息 -->
+      <view class="recipe-info">
+        <view class="recipe-desc">{{detail.desc}}</view>
+        <view class="recipe-rating">
+          <text class="rating-score">★ {{detail.rating}}</text>
+          <text class="rating-text">用户评分</text>
+        </view>
+      </view>
+      
+      <!-- 配料 -->
+      <view class="section">
+        <view class="section-title">食材准备</view>
+        <view class="ingredients">
+          <block wx:for="{{detail.ingredients}}" wx:key="name">
+            <view class="ingredient-group">
+              <view class="ingredient-group-name">{{item.name}}</view>
+              <view class="ingredient-list">
+                <view class="ingredient-item" wx:for="{{item.items}}" wx:for-item="ingredient" wx:key="ingredient">
+                  {{ingredient}}
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+      
+      <!-- 步骤 -->
+      <view class="section">
+        <view class="section-title">制作步骤</view>
+        <view class="steps">
+          <view class="step-item" wx:for="{{detail.steps}}" wx:key="step">
+            <view class="step-num">{{item.step}}</view>
+            <view class="step-desc">{{item.desc}}</view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 营养成分 -->
+      <view class="section">
+        <view class="section-title">营养成分</view>
+        <view class="nutrition">
+          <view class="nutrition-item" wx:for="{{detail.nutrition}}" wx:key="name">
+            <text class="nutrition-name">{{item.name}}</text>
+            <text class="nutrition-value">{{item.value}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view> 
